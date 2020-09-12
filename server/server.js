@@ -8,6 +8,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.use('/api', api)
+
 app.get('/', function(req, res) {
     res.send("Hello From Server")
 })
