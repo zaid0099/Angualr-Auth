@@ -1,3 +1,4 @@
 // For Server.
 npm init --yes
 install express body-parser --save
+npm install --save cors
