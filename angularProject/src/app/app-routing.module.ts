@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { SpecialComponent } from './special/special.component';
 import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
@@ -10,11 +11,11 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'special', component: SpecialComponent },
+  { path: 'special', component: SpecialComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
